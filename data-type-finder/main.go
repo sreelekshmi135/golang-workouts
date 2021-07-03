@@ -34,8 +34,6 @@ func convertType(data string, v interface{}) (interface{}, error) {
 	value := reflect.New(a)
 
 	_, err := fmt.Sscan(data, value.Interface())
-	if err != nil {
-		fmt.Print("error", err)
-	}
+	
 	return value.Elem().Interface(), err
 }
